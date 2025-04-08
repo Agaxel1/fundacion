@@ -1,0 +1,141 @@
+/* Header.css */
+.header {
+  background-color: #f5a623;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo-link {
+  text-decoration: none;
+  /* Eliminar subrayado del enlace */
+}
+
+.logo {
+  height: 80px;
+  /* Ajusta la altura del logo */
+  width: auto;
+  /* Mantener la proporción de la imagen */
+  z-index: 1;
+}
+
+/* Estilos para el menú hamburguesa */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 10;
+  position: fixed;
+  background-color: #0b0b0bc7;
+  border-radius: 10px;
+  padding: 10px 8px;
+  top: 20px;
+  right: 20px;
+}
+
+.menu-icon .bar {
+  width: 35px;
+  height: 4px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Estilos para el menú */
+header nav {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.header nav ul li {
+  margin-right: 20px;
+}
+
+.language-selector select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.header nav.open ul li a {
+  text-decoration: none;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+
+  /* Menú de navegación cuando se despliega */
+  .header nav ul {
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    display: none;
+    padding-left: 0;
+    position: fixed;
+    top: 110px;
+    left: 0;
+    background-color: #f5a623;
+    /* Color de fondo */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: all 0.3s ease;
+    /* Transición suave */
+  }
+
+  /* Mostrar el menú cuando esté abierto */
+  .header nav.open ul {
+    display: block;
+  }
+
+  .header nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .language-selector {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Mostrar el ícono de menú en pantallas pequeñas */
+  .menu-icon {
+    display: flex;
+    z-index: 10;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    /* Ícono hamburguesa alineado a la derecha */
+  }
+
+  /* Menú en dispositivos móviles cuando está abierto */
+  .header nav.open ul li a {
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+  }
+
+  .header nav.open ul li a:hover {
+    background-color: #e5533e;
+  }
+}
+
+/* Efectos de hover en los enlaces del menú */
+.header nav ul li a:hover {
+  color: #fff;
+  background-color: #f5c400;
+  /* Resaltar los enlaces al pasar el mouse */
+}

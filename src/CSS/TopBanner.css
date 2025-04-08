@@ -1,0 +1,36 @@
+/* src/components/TopBanner.css */
+
+.top-banner {
+    background-color: #d0009b; /* Color fucsia */
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .top-banner-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn-link {
+    background-color: #ffd700; /* Amarillo */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-link:hover {
+    background-color: #f5c400;
+  }
+  
+  /* 🔒 Ocultar en pantallas menores a 768px (móvil y tablet) */
+  @media (max-width: 768px) {
+    .top-banner {
+      display: none;
+    }
+  }
+  

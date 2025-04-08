@@ -1,0 +1,97 @@
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .carousel-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .carousel-caption h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .btn-explore {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-explore:hover {
+    background-color: #e5533e;
+  }
+  
+  /* Personaliza los puntos debajo del carrusel */
+  .slick-dots {
+    position: absolute;
+    bottom: 0px;
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .slick-dots li button:before {
+    content: '';
+    display: none;
+  }
+  
+  .slick-dots li button {
+    background-color: #0000006f;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+  }
+  
+  .slick-dots li.slick-active button {
+    background-color: #ffd900;
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .carousel-caption h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    .btn-explore {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  
+    .slick-dots li button {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  

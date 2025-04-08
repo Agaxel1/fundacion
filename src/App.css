@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reducir el tamaño de fuente en dispositivos pequeños */
+  }
+}
