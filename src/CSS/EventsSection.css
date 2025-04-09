@@ -13,6 +13,7 @@
   }
   
   .events-container {
+    cursor: pointer;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -23,7 +24,7 @@
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
-    width: 300px;
+    width: 400px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
   }

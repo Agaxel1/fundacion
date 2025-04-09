@@ -17,7 +17,7 @@
     height: auto;
     max-height: 500px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
   }
   
   .carousel-caption {
@@ -42,7 +42,7 @@
     padding: 10px 20px;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
   }
   

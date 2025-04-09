@@ -1,64 +1,115 @@
-/* Header.css */
+/* 🟡 Estructura base del header */
 .header {
   background-color: #f5a623;
   padding: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
   z-index: 1000;
+  transition: padding 0.3s ease;
+  /* Suaviza la expansión del header */
 }
 
+/* 🟢 Logo */
 .logo-link {
   text-decoration: none;
-  /* Eliminar subrayado del enlace */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  /* Espaciado superior para que no se pegue al logo */
 }
 
 .logo {
   height: 80px;
-  /* Ajusta la altura del logo */
   width: auto;
-  /* Mantener la proporción de la imagen */
   z-index: 1;
 }
 
-/* Estilos para el menú hamburguesa */
+/* 🔵 Menú desplegable */
+.nav-menu {
+  overflow: hidden;
+  max-height: 0;
+  width: 100%;
+  transition: max-height 0.4s ease-in-out;
+  background-color: #f5a623;
+}
+
+.nav-menu.open {
+  max-height: 300px;
+  /* Lo suficientemente alto para mostrar el contenido */
+}
+
+/* 🔴 Estilo del <ul> y <li> */
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* En pantallas pequeñas, los elementos se apilan en columna */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 50%;
+}
+
+.nav-menu ul li {
+  background-color: #f6320bdd;
+  border-radius: 20px;
+  width: 80%;
+  /* Aumentamos el tamaño para que ocupe más espacio */
+  text-align: center;
+  margin-bottom: 10px;
+  /* Separación entre los elementos */
+}
+
+.nav-menu ul li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* 🟠 Efectos de hover en los enlaces */
+.nav-menu ul li a:hover {
+  background-color: #cc2908dd;
+  color: white;
+  border-radius: 20px;
+}
+
+
+/* 🔴 Menú hamburguesa */
 .menu-icon {
-  display: none;
+  display: flex;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
   z-index: 10;
-  position: fixed;
-  background-color: #0b0b0bc7;
+  background-color: #ab6900;
   border-radius: 10px;
   padding: 10px 8px;
+  align-self: flex-end;
+  position: absolute;
   top: 20px;
   right: 20px;
 }
 
 .menu-icon .bar {
-  width: 35px;
-  height: 4px;
+  width: 25px;
+  height: 3px;
   background-color: white;
   border-radius: 5px;
+  transition: transform 0.3s ease;
+  /* Animación de transformación para las barras */
 }
 
-/* Estilos para el menú */
-header nav {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.header nav ul {
-  display: flex;
-  list-style: none;
-}
-
-.header nav ul li {
-  margin-right: 20px;
+/* 🔵 Selector de idioma */
+.language-selector {
+  margin-top: 10px;
+  align-self: flex-end;
 }
 
 .language-selector select {
@@ -66,76 +117,120 @@ header nav {
   border-radius: 5px;
 }
 
-.header nav.open ul li a {
-  text-decoration: none;
-}
-
-/* Ajustes para pantallas pequeñas */
+/* 🟠 Estilos responsive */
 @media (max-width: 768px) {
 
-  /* Menú de navegación cuando se despliega */
-  .header nav ul {
-    flex-direction: column;
-    margin-top: 10px;
-    width: 100%;
-    display: none;
-    padding-left: 0;
-    position: fixed;
-    top: 110px;
-    left: 0;
+  /* En pantallas pequeñas, hacer el menú más grande y centrado */
+  .header {
+    padding: 20px;
+  }
+
+  .logo {
+    height: 60px;
+    /* Ajustamos el tamaño del logo */
+  }
+
+  /* Menú desplegable */
+  .nav-menu {
+    max-height: 0;
+    /* Inicia cerrado */
     background-color: #f5a623;
-    /* Color de fondo */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    transition: all 0.3s ease;
-    /* Transición suave */
+    width: 100%;
   }
 
-  /* Mostrar el menú cuando esté abierto */
-  .header nav.open ul {
-    display: block;
+  .nav-menu.open {
+    max-height: 300px;
+    /* Menú completamente desplegado */
   }
 
-  .header nav ul li {
-    margin-right: 0;
-    margin-bottom: 10px;
-    text-align: center;
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
   }
 
-  .language-selector {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+
+  .nav-menu ul li {
+    background: none;
+    width: 80%;
+    margin-bottom: 15px;
   }
 
-  /* Mostrar el ícono de menú en pantallas pequeñas */
+  .nav-menu ul li a {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
+
+  .nav-menu ul li a:hover {
+   background: none;
+  }
+
+  /* Menú hamburguesa */
   .menu-icon {
     display: flex;
     z-index: 10;
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
-    /* Ícono hamburguesa alineado a la derecha */
   }
 
-  /* Menú en dispositivos móviles cuando está abierto */
-  .header nav.open ul li a {
-    padding: 15px;
-    color: white;
-    font-size: 18px;
-    display: block;
-    width: 100%;
-  }
-
-  .header nav.open ul li a:hover {
-    background-color: #e5533e;
+  /* Selector de idioma en dispositivos pequeños */
+  .language-selector {
+    margin-top: 15px;
+    align-self: center;
+    /* Centrado del selector */
   }
 }
 
-/* Efectos de hover en los enlaces del menú */
-.header nav ul li a:hover {
-  color: #fff;
-  background-color: #f5c400;
-  /* Resaltar los enlaces al pasar el mouse */
+
+/* 🟠 Estilos para pantallas grandes */
+@media (min-width: 769px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+
+  .menu-icon {
+    display: none;
+    /* Esconde el ícono de menú en pantallas grandes */
+  }
+
+  .nav-menu {
+    max-height: none;
+    display: flex;
+    justify-content: center;
+    background: none;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+  }
+
+  .nav-menu ul li {
+    margin: 0 10px;
+  }
+
+  .language-selector {
+    margin: 0;
+  }
+}
+
+/* 💡 Transición de animación para el menú hamburguesa */
+.menu-icon.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  /* Animación para la barra superior */
+}
+
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+  /* La barra del medio desaparece */
+}
+
+.menu-icon.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  /* Animación para la barra inferior */
 }
