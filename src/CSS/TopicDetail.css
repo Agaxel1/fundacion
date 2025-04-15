@@ -1,0 +1,101 @@
+.topic-detail {
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fecha arriba del todo */
+.topic-detail-date {
+  font-size: 0.95rem;
+  color: #999;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Cita encima de la imagen */
+.topic-detail-quote {
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  font-style: italic;
+  color: #444;
+  background-color: #efefef;
+  padding: 10px 15px;
+  border-left: 4px solid #007BFF;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* Imagen */
+.topic-detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+/* Título */
+.topic-detail h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+/* Contenido */
+.topic-detail-content {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.topic-detail-content h3 {
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+.topic-detail-content p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.topic-detail-content a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.topic-detail-content a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .topic-detail h1 {
+    font-size: 1.8rem;
+  }
+
+  .topic-detail-content {
+    font-size: 0.9rem;
+  }
+
+  .topic-detail-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .topic-detail-content p {
+    font-size: 1rem;
+  }
+
+  .topic-detail-quote {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}

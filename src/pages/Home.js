@@ -1,7 +1,7 @@
-// src/pages/Home.js
 import React from 'react';
-import Carousel from '../components/Carousel'; // El carrusel que ya creaste
-import EventsSection from '../components/EventsSection'; // Importa el nuevo componente de eventos
+import Carousel from '../components/Carousel';
+import EventsSection from '../components/EventsSection';
+import TopicSection from '../components/TopicSection';
 import '../CSS/Home.css';
 
 const Home = () => {
@@ -9,8 +9,9 @@ const Home = () => {
     <div className="home">
       <Carousel />
       <EventsSection />
+      <TopicSection />
     </div>
   );
-}
+};
 
 export default Home;

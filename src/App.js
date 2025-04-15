@@ -7,6 +7,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Home from './pages/Home';
 import About from './pages/About';
+import AdminDashboard from './pages/AdminDashboard';
+import TopicDetail from './pages/TopicDetail';
 import './App.css';
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/admin" element={<AdminDashboard />} /> {/* Nueva ruta para administración */}
+        <Route path="/topic/:slug" element={<TopicDetail />} />
       </Routes>
       <Footer />
     </Router>
