@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Para obtener el slug desde la URL
-import axios from 'axios';
+import { BASE_URLs, getTopics } from '../services/api';
 import '../CSS/TopicDetail.css'; // Asegúrate de que el CSS esté bien configurado
+
 
 const TopicDetail = () => {
   const { slug } = useParams(); // Obtenemos el slug desde la URL
   const [topic, setTopic] = useState(null);
-  const BASE_URL = 'http://localhost:5000'; // Cambia a tu URL de producción cuando sea necesario
 
   useEffect(() => {
     const fetchTopic = async () => {
       try {
-        // Primero, obtenemos todos los temas y luego buscamos el que coincide con el slug
-        const response = await axios.get(`${BASE_URL}/topics`);
-        const foundTopic = response.data.find(topic => createSlug(topic.title) === slug);
+        const response = await getTopics();
+        console.log(response)
+        const foundTopic = response.find(topic => createSlug(topic.title) === slug);
 
         if (foundTopic) {
           setTopic(foundTopic);
@@ -76,7 +76,7 @@ const TopicDetail = () => {
       {/* Imagen */}
       {topic.imageUrl && (
         <img
-          src={`${BASE_URL}/uploads/${topic.imageUrl}`}
+          src={`${BASE_URLs}/uploads/${topic.imageUrl}`}
           alt={topic.title}
           className="topic-detail-image"
         />

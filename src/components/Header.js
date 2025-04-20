@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className={`header ${menuOpen ? 'expanded' : ''}`}>
       <a href="/" className="logo-link">
-        <img src={logo} alt="Fundación Gabo" className="logo" />
+        <img src={logo} alt="Fundación Yoyo Zevallos" className="logo" />
       </a>
 
       {/* Ícono de menú hamburguesa */}

@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../CSS/TopicSection.css';
-import axios from 'axios';
+import { BASE_URLs, getTopics } from '../services/api';
 
 const TopicSection = () => {
   const [topics, setTopics] = useState([]);
 
-  const BASE_URL = 'http://localhost:5000'; // Cambia a tu URL de producción cuando sea necesario
 
   useEffect(() => {
     // Fetch topics from the backend
     const fetchTopics = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/topics`);
-        setTopics(response.data.slice(0, 3)); // Solo obtener los últimos 3 temas
-      } catch (error) {
-        console.error('Error fetching topics:', error);
+        const data = await getTopics();
+        setTopics(data);
+      } catch (err) {
+        console.error('Error al obtener temas:', err);
       }
     };
 
@@ -37,7 +36,7 @@ const TopicSection = () => {
           <Link to={`/topic/${createSlug(topic.title)}`} style={{ textDecoration: 'none' }} key={topic._id}>
             <div className="topic-card">
               <img
-                src={`${BASE_URL}/uploads/${topic.imageUrl}`}
+                src={`${BASE_URLs}/uploads/${topic.imageUrl}`}
                 alt={topic.title}
                 className="topic-image"
               />

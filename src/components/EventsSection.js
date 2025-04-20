@@ -8,7 +8,7 @@ import back3 from '../images/back3.png';
 const events = [
   {
     id: 1,
-    title: '“Todo se sabe: el cuento de la creación de Gabo”',
+    title: 'La creciónd de Yoyo Zevallos',
     description:
       'Exposición temporal Biblioteca Nacional de Colombia, 23 de abril - 2 de agosto 2025.',
     image: back1, // Imagen de ejemplo
@@ -23,9 +23,9 @@ const events = [
   },
   {
     id: 3,
-    title: 'Festival Gabo 2025',
+    title: 'Festival Yoyo 2025',
     description:
-      'Festival Gabo 2025: una invitación a vernos de cerca del 25 al 27 de julio en Bogotá.',
+      'Festival Yoyo 2025: una invitación a vernos de cerca del 25 al 27 de julio en Bogotá.',
     image: back3, // Imagen de ejemplo
     link: '/evento-3', // Ajusta a la ruta de cada evento
   },

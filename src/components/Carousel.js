@@ -24,14 +24,14 @@ const Carousel = () => {
                 <div className="carousel-item">
                     <img src={back1} alt="Imagen 1" />
                     <div className="carousel-caption">
-                        <h3>Fundación Gabo lidera estudio sobre desiertos informativos en América Latina</h3>
+                        <h3>Fundación Yoyos lidera estudio sobre desiertos informativos en América Latina</h3>
                         <button className="btn-explore">Explora</button>
                     </div>
                 </div>
                 <div className="carousel-item">
                     <img src={back2} alt="Imagen 2" />
                     <div className="carousel-caption">
-                        <h3>Otro título importante relacionado con los estudios de Gabo</h3>
+                        <h3>Otro título importante relacionado con los estudios de Yoyos</h3>
                         <button className="btn-explore">Explora</button>
                     </div>
                 </div>

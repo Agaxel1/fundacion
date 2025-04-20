@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import EnProceso from './pages/EnProceso';
 import TopBanner from './components/TopBanner';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/admin" element={<AdminDashboard />} /> {/* Nueva ruta para administración */}
         <Route path="/topic/:slug" element={<TopicDetail />} />
+        <Route path="/en-proceso" element={<EnProceso />} />
       </Routes>
       <Footer />
     </Router>
