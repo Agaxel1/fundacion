@@ -26,8 +26,8 @@ const Header = () => {
       {/* Menú de navegación */}
       <nav className={`nav-menu ${menuOpen ? 'open' : ''}`}>
         <ul>
-          <li><a href="/">Quienes somos</a></li>
-          <li><a href="/about">Sobre nosotros</a></li>
+          <li><a href="/quienes-somos">Quienes somos</a></li>
+          <li><a href="/nuestro-camino">Nuestro camino</a></li>
           <li><a href="/news">Noticias</a></li>
           <li><a href="/contact">Contacto</a></li>
         </ul>

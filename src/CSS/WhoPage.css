@@ -1,0 +1,90 @@
+.who-p {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+/* Estilo general para las secciones de acordeón */
+.accordion-button {
+  background-color: #ffffff;
+  color: #444;
+  cursor: pointer;
+  padding: 15px 25px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion {
+  background-color: #f9f9f9;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion.active {
+  border-radius: 30px;
+  background-color: #007bff;
+  color: white;
+}
+
+.panel {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: none;
+}
+
+.panel p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Muestra el contenido cuando la sección es activada */
+.accordion.active+.panel {
+  display: block;
+}
+
+.accordion-content {
+  list-style-type: none;
+}
+
+.arrow {
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 1.5rem;
+  /* Ajuste del tamaño de la flecha */
+  color: #007bff;
+}
+
+.arrow.rotate {
+  transform: rotate(90deg);
+  /* Rotación de la flecha */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .accordion-button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .panel {
+    font-size: 0.9rem;
+  }
+
+}

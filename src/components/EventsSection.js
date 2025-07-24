@@ -1,53 +1,51 @@
-// src/components/EventsSection.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../CSS/EventsSection.css';
-import back1 from '../images/back1.png';
-import back2 from '../images/back2.png';
-import back3 from '../images/back3.png';
-
-const events = [
-  {
-    id: 1,
-    title: 'La creciónd de Yoyo Zevallos',
-    description:
-      'Exposición temporal Biblioteca Nacional de Colombia, 23 de abril - 2 de agosto 2025.',
-    image: back1, // Imagen de ejemplo
-    link: '/evento-1', // Ajusta a la ruta de cada evento
-  },
-  {
-    id: 2,
-    title: 'Taller de libros periodísticos 2025',
-    description: 'Taller con Martín Caparrós.',
-    image: back2, // Imagen de ejemplo
-    link: '/evento-2', // Ajusta a la ruta de cada evento
-  },
-  {
-    id: 3,
-    title: 'Festival Yoyo 2025',
-    description:
-      'Festival Yoyo 2025: una invitación a vernos de cerca del 25 al 27 de julio en Bogotá.',
-    image: back3, // Imagen de ejemplo
-    link: '/evento-3', // Ajusta a la ruta de cada evento
-  },
-];
+import { BASE_URLs, getTopics } from '../services/api';
+import { createSlug } from '../components/Topics';
 
 const EventsSection = () => {
+  const [topics, setTopics] = useState([]);
+
+  useEffect(() => {
+    const fetchTopics = async () => {
+      try {
+        const data = await getTopics();
+        setTopics(data.slice(0, 3)); // Mostrar solo los 3 primeros temas
+      } catch (err) {
+        console.error('Error al obtener temas:', err);
+      }
+    };
+
+    fetchTopics();
+  }, []);
+
   return (
     <div className="events-section">
       <h2 className="section-title">Eventos y Talleres</h2>
       <div className="events-container">
-        {events.map((event) => (
-          <div key={event.id} className="event-card">
-            <img src={event.image} alt={event.title} />
-            <div className="event-info">
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
-              <a href={event.link} className="btn-more-info">
-                Más información
-              </a>
-            </div>
-          </div>
-        ))}
+        {topics.map((topic) => {
+          const slug = createSlug(topic.title);
+          const image = `${BASE_URLs}/uploads/${topic.imageUrl}`;
+
+          return (
+            <Link
+              to={`/${topic.type}/${slug}`}
+              className="event-card"
+              key={topic._id}
+            >
+              <img src={image} alt={topic.title} />
+              <div className="event-body">
+                {topic.tipo && (
+                  <div>
+                    <span className="event-card-label">{topic.tipo}</span>
+                  </div>
+                )}
+                <h3 className="event-title">{topic.title}</h3>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

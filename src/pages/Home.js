@@ -1,7 +1,8 @@
 import React from 'react';
 import Carousel from '../components/Carousel';
 import EventsSection from '../components/EventsSection';
-import TopicSection from '../components/TopicSection';
+import WorkSection from '../components/WorkSection';
+import Convocatorias from '../components/Convocatorias';
 import '../CSS/Home.css';
 
 const Home = () => {
@@ -9,7 +10,8 @@ const Home = () => {
     <div className="home">
       <Carousel />
       <EventsSection />
-      <TopicSection />
+      <WorkSection />
+      <Convocatorias />
     </div>
   );
 };

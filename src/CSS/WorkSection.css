@@ -1,0 +1,117 @@
+/* Estilo general de la sección */
+.work-section {
+    background-color: #f8f3e6;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .work-section-title {
+    font-size: 2.5rem;
+    color: #9b1d55;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Contenedor de tarjetas */
+  .work-cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas más pequeñas */
+    padding: 0 20px;
+  }
+  
+  /* Estilo para cada tarjeta */
+  .work-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .work-card:hover {
+    transform: scale(1.05); /* Efecto hover */
+  }
+  
+  /* Estilo para los íconos (ahora imágenes) */
+  .icon {
+    width: 80px; /* Tamaño de la imagen */
+    height: 80px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Estilo para los títulos */
+  .work-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Descripción debajo del título */
+  .work-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón para cada tarjeta */
+  .btn-more-info {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-more-info:hover {
+    background-color: #e64a19;
+  }
+  
+  /* Estilo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .work-cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .work-card {
+      width: 100%;
+      max-width: 350px;
+    }
+  
+    .work-section-title {
+      font-size: 2rem;
+    }
+  
+    .work-card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .work-card p {
+      font-size: 0.95rem;
+    }
+  
+    .btn-more-info {
+      font-size: 0.95rem;
+    }
+  }
+  

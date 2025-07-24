@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Para obtener el slug desde la URL
 import { BASE_URLs, getTopics } from '../services/api';
 import '../CSS/TopicDetail.css'; // Asegúrate de que el CSS esté bien configurado
+import {createSlug} from '../components/Topics'
 
 
 const TopicDetail = () => {
@@ -28,12 +29,6 @@ const TopicDetail = () => {
     fetchTopic();
   }, [slug]);
 
-  // Función para crear el slug desde el título
-  const createSlug = (title) => {
-    return title.toLowerCase()
-      .replace(/ /g, '-')      // Reemplaza los espacios por guiones
-      .replace(/[^\w-]+/g, ''); // Elimina cualquier caracter no alfanumérico
-  };
 
   // Función para renderizar el contenido basado en su tipo (párrafo o subtítulo)
   const renderContent = (contentArray) => {

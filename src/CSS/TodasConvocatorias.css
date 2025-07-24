@@ -1,0 +1,42 @@
+.todas-convocatorias {
+    padding: 2rem;
+    background: #fff;
+}
+
+.todas-convocatorias h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+}
+
+.convocatorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.convocatoria-mini {
+    background: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.convocatoria-mini:hover {
+    transform: scale(1.02);
+}
+
+.convocatoria-mini img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.convocatoria-mini h3 {
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+}

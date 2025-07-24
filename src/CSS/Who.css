@@ -1,0 +1,175 @@
+.who-page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+
+.who-container {
+  padding: 30px;
+  max-width: 1700px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Sección general de contenido */
+.who-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.who-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.who-text h1 {
+  font-size: 2.5rem;
+  color: #192129;
+  margin-bottom: 15px;
+}
+
+.who-text p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  line-height: 1.8;
+}
+
+.who-text h2 {
+  font-size: 1.6rem;
+  margin-top: 25px;
+  color: #2c3e50;
+}
+
+.who-text ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.who-text ul li {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin: 10px 0;
+}
+
+.who-image img {
+  margin-right: 300px;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.active-title {
+  background-color: #007bff78;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+/* Sección del Patrono */
+.patrono {
+  margin-top: 50px;
+}
+
+.patrono-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+
+.patrono-image img {
+  max-width: 250px;
+  border-radius: 100px;
+  object-fit: cover;
+  border: 3px solid #0000009b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.patrono-text {
+  flex: 1;
+}
+
+.patrono-text h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.patrono-text p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+/* Sección del lema */
+.lema {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.lema h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.lema blockquote {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  font-style: italic;
+  border-left: 5px solid #3498db;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .who-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .who-text h1 {
+    font-size: 2rem;
+  }
+
+  .who-text p {
+    font-size: 1rem;
+  }
+
+  .who-image img {
+    margin-right: 0;
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .patrono-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .patrono-image img {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .patrono-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .patrono-text p {
+    font-size: 1rem;
+  }
+}
